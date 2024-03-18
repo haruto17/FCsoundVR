@@ -7,19 +7,27 @@
   </head>
   <body>
     <a-scene environment>
-      <a-entity id="C4" button="label: C4"></a-entity>
-      <a-entity id="C4s" button="label: C4#"></a-entity>
-      <a-entity id="D4" button="label: D4"></a-entity>
-      <a-entity id="D4s" button="label: D4#"></a-entity>
-      <a-entity id="E4" button="label: E4"></a-entity>
-      <a-entity id="F4" button="label: F4"></a-entity>
-      <a-entity id="F4s" button="label: F4#"></a-entity>
-      <a-entity id="G4" button="label: G4"></a-entity>
-      <a-entity id="G4s" button="label: G4#"></a-entity>
-      <a-entity id="A4" button="label: A4"></a-entity>
-      <a-entity id="A4s" button="label: A4#"></a-entity>
-      <a-entity id="B4" button="label: B4"></a-entity>
-      <a-entity id="C5" button="label: C5"></a-entity>
+      <a-entity
+        id="menu"
+        menu
+        position="0 1.5 -0.5"
+        rotation="-45 0 0"
+        event-manager
+      >
+        <a-entity id="C4" button="label: C4"></a-entity>
+        <a-entity id="C4s" button="label: C4#"></a-entity>
+        <a-entity id="D4" button="label: D4"></a-entity>
+        <a-entity id="D4s" button="label: D4#"></a-entity>
+        <a-entity id="E4" button="label: E4"></a-entity>
+        <a-entity id="F4" button="label: F4"></a-entity>
+        <a-entity id="F4s" button="label: F4#"></a-entity>
+        <a-entity id="G4" button="label: G4"></a-entity>
+        <a-entity id="G4s" button="label: G4#"></a-entity>
+        <a-entity id="A4" button="label: A4"></a-entity>
+        <a-entity id="A4s" button="label: A4#"></a-entity>
+        <a-entity id="B4" button="label: B4"></a-entity>
+        <a-entity id="C5" button="label: C5"></a-entity>
+      </a-entity>
       <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
       <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
     </a-scene>
