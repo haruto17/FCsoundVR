@@ -4,7 +4,7 @@ AFRAME.registerComponent("button", {
       default: "label",
     },
     width: {
-      default: 0.11,
+      default: 0.07,
     },
   },
   init: function () {
