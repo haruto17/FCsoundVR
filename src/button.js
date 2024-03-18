@@ -29,5 +29,36 @@ AFRAME.registerComponent("button", {
     });
     labelEl.setAttribute("scale", "0.75 0.75 0.75");
     this.el.appendChild(labelEl);
+    this.bindMethods();
+    this.el.addEventListener("stateadded", this.stateChanged);
+    this.el.addEventListener("stateremoved", this.stateChanged);
+    this.el.addEventListener("pressedstarted", this.onPressedStarted);
+    this.el.addEventListener("pressedended", this.onPressedEnded);
+  },
+  bindMethods: function () {
+    this.stateChanged = this.stateChanged.bind(this);
+    this.onPressedStarted = this.onPressedStarted.bind(this);
+    this.onPressedEnded = this.onPressedEnded.bind(this);
+  },
+  stateChanged: function () {
+    let color = this.el.is("pressed") ? "green" : this.color;
+    this.el.setAttribute("material", {
+      color: color,
+    });
+  },
+  onPressedStarted: function () {
+    let el = this.el;
+    el.setAttribute("material", {
+      color: "green",
+    });
+    el.emit("click");
+  },
+  onPressedEnded: function () {
+    if (this.el.is("pressed")) {
+      return;
+    }
+    this.el.setAttribute("material", {
+      color: this.color,
+    });
   },
 });
